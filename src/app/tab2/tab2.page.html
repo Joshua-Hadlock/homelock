@@ -13,11 +13,21 @@
     </ion-toolbar>
   </ion-header>
   <div class="full searchbar">
-  <div class="search">
-    <ion-input [(ngModel)]="lng" min="-180" max="180"></ion-input>
-    <ion-input [(ngModel)]="lat" min="-90" max="90"></ion-input>
-    <ion-button (click)="generateMap()"></ion-button>
-  </div>
+    <ion-item class="search" *ngIf="!showMap" [@popOut]>
+      <ion-item>
+        <ion-label position="floating">Postal Code</ion-label>
+        <ion-input [(ngModel)]="postalcode" [min]="0"></ion-input>
+        <ion-note slot="helper" *ngIf="!invalidPostalCode">Enter a valid Postal Code</ion-note>
+        <ion-note slot="helper" *ngIf="invalidPostalCode" color="danger">Invalid Postal Code</ion-note>
+        <ion-note slot="error">Invalid Postal Code</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-button (click)="generateMap()">Lookup houses</ion-button>
+      </ion-item>
+      
+    </ion-item>
+    
+    
   <div #map id="map" class="full"></div>
   </div>
   

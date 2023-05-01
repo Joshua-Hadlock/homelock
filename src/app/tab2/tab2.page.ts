@@ -2,32 +2,54 @@ import { Component } from '@angular/core';
 import { environment } from '../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
 import { HousesService } from '../services/houses.service';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
+  animations: [
+    trigger('popOut', [
+      state('void', style({ width: '0px', height: '89px'})),
+      transition('* => void', [
+        animate(1000)
+      ])
+    ])
+  ]
 })
 export class Tab2Page {
     map: any | undefined;
     style = 'mapbox://styles/mapbox/streets-v11';
-    lat = 37.75;
-    lng = -122.41;
+    lat = 40.4;
+    lng = -111.8;
+    postalcode: number = 84003;
     data: any;
     markerData: any = [];
+    showMap = false;
+    invalidPostalCode = false;
 
 
     constructor (private house: HousesService) {}
 
     ngOnInit() {
-        this.generateMap();
+        
     }
 
 
     generateMap() {
-      this.house.searchByLocation(this.lng, this.lat).subscribe(res => {
+      this.house.searchByLocation(this.postalcode).subscribe(res => {
         (mapboxgl as any).accessToken = environment.mapbox.accessToken;
         this.data = res;
+        console.log(this.data)
+        if (this.data === 'E') {
+          this.invalidPostalCode = true;
+
+        } else if (this.showMap === true) {
+          //leave this blank so people don't double click the button
+        }else {
+
+        this.lat = this.data.property[0].location.latitude;
+        this.lng = this.data.property[0].location.longitude;
         this.map = new mapboxgl.Map({
           container: 'map',
           style: this.style,
@@ -40,7 +62,8 @@ export class Tab2Page {
       });
 
       this.data.property.forEach((house: any) => {
-        this.markerData.push({
+        if (house.location.longitude && house.location.latitude) {
+          this.markerData.push({
           type: 'Feature',
           geometry: {
               type: 'Point',
@@ -48,9 +71,12 @@ export class Tab2Page {
           },
         properties: {
           title: 'random house',
-          description: 'This is your very special data :)'
+          description: 'This is your very special data :)',
+          id: house.identifier.Id
         }  
       })
+        }
+        
       })
 
       const geojson = {
@@ -75,14 +101,19 @@ export class Tab2Page {
       .setPopup(
         new mapboxgl.Popup({ offset: 25 }) // add popups
           .setHTML(
-            `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+            `<ion-item href="/tabs/tab2/details/${feature.properties.id}">${feature.properties.title}</h3><p>${feature.properties.description}</p></ion-item>`
           )
       )
       .addTo(this.map);
     
     }
-      
+    this.showMap = true;
+  }
       });
-
+      
+      
     }
+    
 }
+
+
