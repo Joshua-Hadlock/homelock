@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="tertiary">
     <ion-title>
-      Capacitor
+      Map
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,18 +9,17 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Capacitor</ion-title>
+      <ion-title size="large">Map</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-item>
-    <ion-input label="Badge count" [clearInput]="true" type="number" min="0" max="9999" [(ngModel)]="badgeCount"></ion-input>
-  </ion-item>
-  <ion-button color="primary" expand="block" (click)="updateBadgeCount()">Update Badge</ion-button>
-  <br />
-  <ion-item>
-    <ion-input label="Text to speak" [clearInput]="true" [(ngModel)]="textToSpeak"></ion-input>
-  </ion-item>
-  <ion-button color="primary" expand="block" (click)="sayTheThing()">Say The Thing</ion-button>
+  <div class="full searchbar">
+  <div class="search">
+    <ion-input [(ngModel)]="lng" min="-180" max="180"></ion-input>
+    <ion-input [(ngModel)]="lat" min="-90" max="90"></ion-input>
+    <ion-button (click)="generateMap()"></ion-button>
+  </div>
+  <div #map id="map" class="full"></div>
+  </div>
+  
 
 </ion-content>
