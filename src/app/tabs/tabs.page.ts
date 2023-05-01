@@ -1,9 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+  styleUrls: ['tabs.page.scss'],
+  animations: [
+    trigger('myOtherInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('0.5s', style({ transform: 'translateX(0)' })),
+      ]),
+      transition(':leave', [
+        animate('0.5s', style({ transform: 'translateX(100%)' }))
+      ])
+    ])
+  ]
 })
 export class TabsPage implements OnInit {
 
@@ -18,5 +31,6 @@ export class TabsPage implements OnInit {
       // this.badge.set(this.tabCount);
     });
   }
+
 
 }

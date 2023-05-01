@@ -17,8 +17,9 @@ ion-tab-bar {
 }
 ion-label {
     font-size:20px;
-    font-weight:lighter;
     padding-right:40px;
+    font-weight:300;
+    color:white;
 }
 .logo {
     width:300px;
@@ -43,4 +44,36 @@ ion-label {
 }
 .right {
     width:33.33%;
+}
+ion-page {
+    display:none;
+}
+ion-menu-button {
+    display:none;
+}
+
+
+@media screen and (max-width: 390px) {
+   ion-label {
+    display:none;
+   }
+   .logo {
+    width:200px;
+    height:200px;
+   }
+   ion-page {
+    display:block;
+    font-size:30px;
+    padding-left:60px;
+    display:flex;
+    align-items: center;
+    display:block;
+   }
+   ion-menu-button {
+    color:white; 
+    padding-left:250px;
+    margin-top:80px;
+    display: block;
+   }
+
 }

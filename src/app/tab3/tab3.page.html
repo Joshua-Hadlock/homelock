@@ -1,25 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="danger">
-    <ion-title>
-      Pokemon
-    </ion-title>
-    <ion-progress-bar type="indeterminate" [hidden]="!isLoading"></ion-progress-bar>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Pokemon</ion-title>
     </ion-toolbar>
   </ion-header>
+<div class="everything">
+  <div class="bodyImage"></div>
 
-  <form>
-    <ion-list>
-      <ion-searchbar name="searchBar" (ionInput)="filterItems($event)" [debounce]="300"></ion-searchbar>
-      <ion-item *ngFor="let pokemon of filteredList" [routerLink]="'./detail/' + pokemon.name" lines="full" detail>
-        <h2>{{ pokemon.name | titlecase }}</h2>
-      </ion-item>
-    </ion-list>
-  </form>
+  <div class="aboutText">
+    <h1>About Us</h1>
+    <p>Here at Homelock we pride ourselves in giving you the best possible house you can call home, we know that homes are a huge factor in our lives, its were we are raised, taught and loved and here at Homelock we want to give you all of that at a rate you are happy with. We are a small company based off of Salt Lake City Utah and have expanded all over the country, we are excited to see what the future brings for us all. Our founders were 2 high school students named Josh and Isaac back in 2023, Originally a school project ended up taking off, now the 2 business moguls are enjoying a extremely lavish lifestyle and are both married with 2 kids each. Anyone who choses Homelock is family </p>
+  </div>
+</div>
+
 </ion-content>

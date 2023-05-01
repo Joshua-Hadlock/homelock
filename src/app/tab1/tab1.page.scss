@@ -14,8 +14,8 @@
             color:white;
             font-size:70px;
             text-align:center;
-            font-weight:lighter;
-            width:400px;
+            font-weight:300;
+            width:500px;
         }
         button {
             width:150px;
@@ -23,4 +23,18 @@
             background-color:#003353;
         }
     }
+
 }
+
+
+
+@media screen and (max-width: 390px) {
+    .body{
+        background-position:center;
+    }
+    .body .blackout h1 {
+        font-size:50px;
+        width:300px;
+    }
+ 
+ }
