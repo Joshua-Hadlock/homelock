@@ -1,0 +1,21 @@
+.full {
+    height: 100%;
+    width: 100%;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search {
+    z-index: 2;
+    background-color: black;
+}
+
+#map {
+    position: fixed;
+}
+
