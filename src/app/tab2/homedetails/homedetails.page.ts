@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HousesService } from 'src/app/services/houses.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-homedetails',
@@ -7,8 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomedetailsPage  implements OnInit {
 
-  constructor() { }
+  propertyId: any;
+  propertyDetails: any;
+  constructor(private houses: HousesService, private route: ActivatedRoute) {
+    
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.route)
+    this.propertyId = this.route.snapshot.paramMap.get('id');
+    this.houses.searchHouseById(this.propertyId).subscribe(res => {
+      
+      this.propertyDetails = res;
+
+      console.log(this.propertyDetails)
+    })
+  }
 
 }

@@ -19,7 +19,7 @@ export class HousesService {
   }
 
   searchHouseById(id: string) {
-    return this.http.get(`https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/detail?id=${id}`, {headers: {'apikey': environment.apiKey}}).pipe(
+    return this.http.get(`https://api.gateway.attomdata.com/propertyapi/v1.0.0/sale/detail?id=${id}`, {headers: {'apikey': environment.apiKey}}).pipe(
       catchError(err => {
         return 'E';
       })
