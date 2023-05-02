@@ -1,0 +1,37 @@
+.homepageBody {
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:row;
+    .homepageBodyLeft {
+        width:40%;
+        height:100%;
+        background-color:red;
+        display:flex;
+        align-items: center;
+        .textContainer {
+            width:100%;
+            height:90%;
+            background-color:yellow;
+            h1 {
+                font-size:50px;
+                font-weight:300;
+                text-align:center;
+            }
+        }
+    }
+    .homepageBodyRight {
+        width:60%;
+        height:100%;
+        background-color:blue;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        .houseImage {
+            width:90%;
+            height:70%;
+            background-color:green;
+            margin-top:50px;
+        }
+    }
+}
