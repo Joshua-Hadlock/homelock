@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-tabs',
@@ -21,8 +22,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class TabsPage implements OnInit {
 
   badgeCount = 3;
+  
 
-  constructor() {}
+  constructor(public afAuth: AngularFireAuth) {}
 
   ngOnInit() {
     window.addEventListener('badgeCount', (e: Event) =>  {

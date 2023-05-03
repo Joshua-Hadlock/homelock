@@ -45,9 +45,19 @@ ion-label {
 .right {
     width:33.33%;
 }
-ion-page {
-    display:none;
+
+.no-ripple-effect {
+    --ripple-color: transparent;
 }
+// ion-page {
+//     display:block;
+//     font-size:30px;
+//     padding-left:60px;
+//     display:flex;
+//     align-items: center;
+//     display:block;
+//    }
+
 ion-menu-button {
     display:none;
 }
