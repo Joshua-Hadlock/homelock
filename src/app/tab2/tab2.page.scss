@@ -12,11 +12,21 @@
 
 .search {
     z-index: 2;
-    background-color: black;
 }
 
 #map {
     position: fixed;
+}
+ion-item {
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.searchBarPosition {
+    display:flex;
+    flex-direction:column;
+    margin-right:10px;
 }
 
 

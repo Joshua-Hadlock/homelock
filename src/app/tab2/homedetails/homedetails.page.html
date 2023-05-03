@@ -1,19 +1,22 @@
 <div>
-  {{propertyDetails?.property[0].address.line1}}
+  
 <div class="homepageBody">
  <div class="homepageBodyLeft">
     <div class="textContainer">
-        <h1>5252 Nothern Ave</h1>
+        <h1>{{propertyDetails?.property[0].address.line1}}4254 Northern Ave</h1>
+        <h3>${{propertyDetails?.property[0].sale.amount.saleamt}}423,234</h3>
         <div class="box1">
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Year: 2010{{propertyDetails?.property[0].summary.yearbuilt}}</li>
+                <li>Property Type: House{{propertyDetails?.property[0].building.summary.bldgType}}</li>
+                <li>Size: 10,000{{propertyDetails?.property[0].building.size.bldgsize}} SqFt</li>
+                <li>Pool: YES{{propertyDetails?.property[0].lot.pooltype}}</li>
+                <li>Rooms: 7{{propertyDetails?.property[0].building.rooms.roomsTotal}}</li>
+                <li>Garage Size: 2{{propertyDetails?.property[0].building.parking?.prkgSpaces}}</li>
+                <li>House Levels: 1{{propertyDetails?.property[0].building.summary.levels}}</li>
+                
             </ul>
+            <p>2/12/2018</p>
             <div class="box2">
             
             </div>
