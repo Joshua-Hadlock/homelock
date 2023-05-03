@@ -3,17 +3,17 @@
 <div class="homepageBody">
  <div class="homepageBodyLeft">
     <div class="textContainer">
-        <h1>{{propertyDetails?.property[0].address.line1}}4254 Northern Ave</h1>
-        <h3>${{propertyDetails?.property[0].sale.amount.saleamt}}423,234</h3>
+        <h1>{{propertyDetails?.property[0].address.line1 || 'error'}}</h1>
+        <h3>${{propertyDetails?.property[0].sale.amount.saleamt || 'error'}}</h3>
         <div class="box1">
             <ul>
-                <li>Year: 2010{{propertyDetails?.property[0].summary.yearbuilt}}</li>
-                <li>Property Type: House{{propertyDetails?.property[0].building.summary.bldgType}}</li>
-                <li>Size: 10,000{{propertyDetails?.property[0].building.size.bldgsize}} SqFt</li>
-                <li>Pool: YES{{propertyDetails?.property[0].lot.pooltype}}</li>
-                <li>Rooms: 7{{propertyDetails?.property[0].building.rooms.roomsTotal}}</li>
-                <li>Garage Size: 2{{propertyDetails?.property[0].building.parking?.prkgSpaces}}</li>
-                <li>House Levels: 1{{propertyDetails?.property[0].building.summary.levels}}</li>
+                <li>Year: {{propertyDetails?.property[0].summary.yearbuilt || 'error'}}</li>
+                <li>Property Type: {{propertyDetails?.property[0].building.summary.bldgType || 'error'}}</li>
+                <li>Size: {{propertyDetails?.property[0].building.size.bldgsize || 'error'}} SqFt</li>
+                <li>Pool: {{propertyDetails?.property[0].lot.pooltype || 'error'}}</li>
+                <li>Rooms: {{propertyDetails?.property[0].building.rooms.roomsTotal || 'error'}}</li>
+                <li>Garage Size: {{propertyDetails?.property[0].building.parking?.prkgSpaces || 'error'}}</li>
+                <li>House Levels: {{propertyDetails?.property[0].building.summary.levels || 'error'}}</li>
                 
             </ul>
             <p>2/12/2018</p>

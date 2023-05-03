@@ -6,7 +6,6 @@ import { Tab3Page } from './tab3.page';
 
 import {HttpClientModule} from '@angular/common/http';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
-import { DetailPage } from './detail/detail.page';
 
 @NgModule({
   imports: [
@@ -16,7 +15,7 @@ import { DetailPage } from './detail/detail.page';
     Tab3PageRoutingModule,
     HttpClientModule,
   ],
-  declarations: [Tab3Page, DetailPage],
+  declarations: [Tab3Page],
   providers: [ TitleCasePipe],
 })
 export class Tab3PageModule {}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { resolveSoa } from 'dns';
 
 @Component({
   selector: 'app-tab1',
@@ -11,6 +12,7 @@ export class signin {
   email: any;
   password: any;
   signingup = false;
+  failed: boolean = false;
   constructor(public authenticationService: AuthenticationService, public afAuth: AngularFireAuth) { }
 
   changeToSigningUp() {
@@ -21,7 +23,7 @@ export class signin {
   }
 
   signUp() {
-    this.authenticationService.SignUp(this.email, this.password);
+    this.authenticationService.SignUp(this.email, this.password)
     this.email = '';
     this.password = '';
     }

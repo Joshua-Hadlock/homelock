@@ -31,6 +31,7 @@
     "@awesome-cordova-plugins/text-to-speech-advanced": "^6.3.0",
     "@capacitor/app": "4.1.1",
     "@capacitor/core": "4.7.3",
+    "@capacitor/geolocation": "^4.1.0",
     "@capacitor/haptics": "4.1.0",
     "@capacitor/ios": "4.7.3",
     "@capacitor/keyboard": "4.1.1",
@@ -77,6 +78,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "latlng-to-zip": "^0.0.2",
     "ts-node": "~8.3.0",
     "typescript": "~4.8.4"
   },

@@ -6,11 +6,11 @@
     
 <!-- <span class="spacer"></span> -->
 <div class="middle">
-      <ion-tab-button tab="tab3" class="no-ripple-effect"><ion-label>ABOUT</ion-label></ion-tab-button>
+      <ion-tab-button tab="about" class="no-ripple-effect"><ion-label>ABOUT</ion-label></ion-tab-button>
 
-      <ion-tab-button tab="tab1" class="no-ripple-effect"><ion-label>HELP</ion-label></ion-tab-button>
+      <ion-tab-button tab="home" class="no-ripple-effect"><ion-label>HELP</ion-label></ion-tab-button>
     
-      <ion-tab-button tab="tab2" class="no-ripple-effect"><ion-label>BROWSE</ion-label></ion-tab-button>
+      <ion-tab-button tab="browse" class="no-ripple-effect"><ion-label>BROWSE</ion-label></ion-tab-button>
 </div>
 
       <!-- <span class="spacer"></span> -->
@@ -29,6 +29,14 @@
 </ion-tabs>
 
 <ion-menu contentId="main-content">
-  <ion-content class="ion-padding">This is the menu content.</ion-content>
+  <ion-tab-button tab="about" class="no-ripple-effect"><ion-label>ABOUT</ion-label></ion-tab-button>
+
+      <ion-tab-button tab="home" class="no-ripple-effect"><ion-label>HELP</ion-label></ion-tab-button>
+    
+      <ion-tab-button tab="browse" class="no-ripple-effect"><ion-label>BROWSE</ion-label></ion-tab-button>
+      <div class="right">
+        <ion-tab-button id="sign-in" *ngIf="(afAuth.user | async) === null" tab="sign-in" class="no-ripple-effect"><ion-label>SIGN IN</ion-label></ion-tab-button>
+        <ion-tab-button id="sign-out" *ngIf="(afAuth.user | async)" class="no-ripple-effect" tab="sign-in"><ion-label>SIGN OUT</ion-label></ion-tab-button>
+      </div>
 </ion-menu>
 

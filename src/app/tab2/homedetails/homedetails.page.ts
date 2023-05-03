@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./homedetails.page.scss'],
 })
 export class HomedetailsPage  implements OnInit {
-
   propertyId: any;
   propertyDetails: any;
   constructor(private houses: HousesService, private route: ActivatedRoute) {
@@ -16,7 +15,7 @@ export class HomedetailsPage  implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.route)
+    
     this.propertyId = this.route.snapshot.paramMap.get('id');
     this.houses.searchHouseById(this.propertyId).subscribe(res => {
       

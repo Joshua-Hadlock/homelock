@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
 import { HousesService } from '../services/houses.service';
 import { trigger, transition, style, animate, state } from '@angular/animations';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-tab2',
@@ -18,8 +19,10 @@ import { trigger, transition, style, animate, state } from '@angular/animations'
   ]
 })
 export class Tab2Page {
+  
     map: any | undefined;
     style = 'mapbox://styles/mapbox/streets-v11';
+    
     lat = 40.4;
     lng = -111.8;
     postalcode: number = 84003;
@@ -32,7 +35,7 @@ export class Tab2Page {
     constructor (private house: HousesService) {}
 
     ngOnInit() {
-        
+
     }
 
 

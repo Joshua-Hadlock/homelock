@@ -47,10 +47,10 @@ SignIn(email: string, password: string) {
 this.angularFireAuth
 .signInWithEmailAndPassword(email, password)
 .then(res => {
-console.log(`You're in!`);
+  console.log('You are Successfully logged in!');
 })
 .catch(err => {
-console.log('Something went wrong:',err.message);
+console.log('Something is wrong:',err.message);
 });
 }
 
