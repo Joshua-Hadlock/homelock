@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
 .homepageBody {
     width:100%;
     height:100vh;
@@ -19,6 +20,7 @@
                 font-size:50px;
                 font-weight:300;
                 text-align:center;
+                font-family: "Prata", serif;
             }
             h3 {
                 text-align:center;
@@ -36,8 +38,8 @@
                     text-align:center;
                     color:black;
                     font-size:20px;
-                    padding-top:10px;
-                    font-family: 'Playfair Display', serif;
+                    padding-top:20px;
+                    font-weight:300;
                 }
                 p {
                     color:rgb(107, 107, 107);
@@ -54,7 +56,7 @@
                 background-color:#6d8c6f88;
                 position:relative;
                 left:50px;
-                bottom:250px;
+                bottom:300px;
                 z-index:-1;
             }
         }
@@ -71,9 +73,49 @@
             background-image: url(../../../assets/houseImage.png);
             background-size:cover;
             margin-top:50px;
+            background-position:center;
         }
     }
 }
 
 
   
+@media screen and (max-width: 800px) {
+    
+    .homepageBody .homepageBodyLeft .textContainer h1 {
+        font-size:20px;
+        position:relative;
+    }
+    .homepageBody .homepageBodyLeft .textContainer h3 {
+        font-size:15px;
+        position:relative;
+    }
+    .homepageBody .homepageBodyLeft .textContainer .box1 {
+        background-color:transparent;
+        width:120px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        height:400px;
+
+    }
+    .homepageBody .homepageBodyLeft .textContainer .box1 ul  {
+        text-align:center;
+        margin: auto;
+        position:absolute;
+        left:50%;
+        transform: translate(-50%);
+    }
+    .homepageBody .homepageBodyLeft .textContainer .box1 ul li {
+        color: white;
+        font-size:15px;
+        text-align:center;
+    }
+    .homepageBody .homepageBodyLeft .textContainer .box1 p {
+        position:relative;
+        top:250px;
+    }
+    .homepageBody .homepageBodyLeft .textContainer .box2 {
+        display:none;
+    }
+ }
