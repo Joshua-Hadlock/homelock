@@ -6,32 +6,74 @@
     .homepageBodyLeft {
         width:40%;
         height:100%;
-        background-color:red;
         display:flex;
         align-items: center;
         .textContainer {
             width:100%;
             height:90%;
-            background-color:yellow;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             h1 {
                 font-size:50px;
                 font-weight:300;
                 text-align:center;
+            }
+            h3 {
+                text-align:center;
+                font-weight:300;
+            }
+            .box1 {
+                width:450px;
+                height:500px;
+                background-color:#6D8C6F;
+                position:relative;
+                z-index: 100;
+                padding-top:0px;
+                ul li {
+                    list-style: none;
+                    text-align:center;
+                    color:black;
+                    font-size:20px;
+                    padding-top:10px;
+                    font-family: 'Playfair Display', serif;
+                }
+                p {
+                    color:rgb(107, 107, 107);
+                    text-align:center;
+                    position:absolute;
+                    bottom:0;
+                    left:50%;
+                    transform: translate(-50%);
+                }
+            }
+            .box2 {
+                width:450px;
+                height:500px;
+                background-color:#6d8c6f88;
+                position:relative;
+                left:50px;
+                bottom:250px;
+                z-index:-1;
             }
         }
     }
     .homepageBodyRight {
         width:60%;
         height:100%;
-        background-color:blue;
         display:flex;
         align-items:center;
         justify-content:center;
         .houseImage {
             width:90%;
             height:70%;
-            background-color:green;
+            background-image: url(../../../assets/houseImage.png);
+            background-size:cover;
             margin-top:50px;
         }
     }
 }
+
+
+  
