@@ -4,16 +4,20 @@
     <ion-label *ngIf="(afAuth.user | async) === null && signingup">Sign Up</ion-label>
     <ion-label *ngIf="afAuth.user | async">Sign Out</ion-label>
     
-    <div *ngIf="(afAuth.user | async) === null && !signingup">
+    <div *ngIf="(afAuth.user | async) === null && !signingup" class="signIn">
       
       <ion-input type="email" [(ngModel)]="email" placeholder="email"></ion-input>
       <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>
       <ion-tab-button (click)="signIn()">Sign In</ion-tab-button>
       
-      <ion-note (click)="changeToSigningUp()">Don't have an account? Sign up here</ion-note>
 
+      <ion-note (click)="changeToSigningUp()">Don't have an account? Sign up here</ion-note>
       <ion-button (click)="authenticationService.GoogleAuth()">log in with google</ion-button>
+      
     </div>
+
+
+
     <div *ngIf="(afAuth.user | async) === null && signingup">
       <ion-input type="email" [(ngModel)]="email" placeholder="email"></ion-input>
       <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>

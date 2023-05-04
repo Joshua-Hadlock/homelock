@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { resolveSoa } from 'dns';
@@ -13,7 +14,7 @@ export class signin {
   password: any;
   signingup = false;
   failed: boolean = false;
-  constructor(public authenticationService: AuthenticationService, public afAuth: AngularFireAuth) { }
+  constructor(public authenticationService: AuthenticationService, public afAuth: AngularFireAuth, private _router: Router) { }
 
   changeToSigningUp() {
     this.signingup = true;

@@ -7,13 +7,15 @@ import { Badge } from '@awesome-cordova-plugins/badge/ngx';
 import { TextToSpeechAdvanced } from '@awesome-cordova-plugins/text-to-speech-advanced/ngx';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { HomeDetailsPageModule } from './homedetails/homedetails.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    HomeDetailsPageModule
   ],
   declarations: [Tab2Page],
   providers: [Badge, TextToSpeechAdvanced]

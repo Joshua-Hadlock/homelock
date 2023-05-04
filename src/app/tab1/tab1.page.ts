@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -6,47 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  constructor() { }
+  constructor(private _router: Router) { }
 
-  alertButtons = [
-    {
-      text: 'OK',
-      handler: this.myHandler
-    }
-  ];
-
-  person = {
-    name: 'Todd',
-    nickname: '',
-    age: '',
-    bio: '',
-  };
-
-  public alertInputs = [
-    {
-      placeholder: 'Name',
-      value: this.person.name,
-    },
-    {
-      placeholder: 'Nickname (max 8 characters)',
-      attributes: {
-        maxlength: 8,
-      },
-    },
-    {
-      type: 'number',
-      placeholder: 'Age',
-      min: 1,
-      max: 100,
-    },
-    {
-      type: 'textarea',
-      placeholder: 'A little about yourself',
-    },
-  ];
-
-  myHandler(ev: Event) {
-    console.log('Alert did dismiss');
+  goToBrowse() {
+    this._router.navigate(['tabs/browse']);
   }
 
 }
