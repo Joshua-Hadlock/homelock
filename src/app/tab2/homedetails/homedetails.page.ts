@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HousesService } from 'src/app/services/houses.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homedetails',
@@ -10,8 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 export class HomedetailsPage  implements OnInit {
   propertyId: any;
   propertyDetails: any;
-  constructor(private houses: HousesService, private route: ActivatedRoute) {
+  constructor(private houses: HousesService, private route: ActivatedRoute, private _router: Router) {
     
+  }
+  
+  goBack() {
+    this._router.navigate(['tabs/browse'])
   }
 
   ngOnInit() {
@@ -24,5 +29,6 @@ export class HomedetailsPage  implements OnInit {
       console.log(this.propertyDetails)
     })
   }
+
 
 }

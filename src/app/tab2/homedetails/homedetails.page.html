@@ -3,6 +3,7 @@
 <div class="homepageBody">
  <div class="homepageBodyLeft">
     <div class="textContainer">
+        <button (click)="goBack()" href="tabs/browse">Return</button>
         <h1>{{propertyDetails?.property[0].address.line1 || 'error'}}</h1>
         <h3>${{propertyDetails?.property[0].sale.amount.saleamt || 'error'}}</h3>
         <div class="box1">
