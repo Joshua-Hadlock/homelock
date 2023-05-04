@@ -62,9 +62,15 @@ ion-menu-button {
     display:none;
 }
 
+.menu-inner {
+    display: flex;
+    slot {
+        display: flex;
+    }
+}
 
 @media screen and (max-width: 800px) {
-   ion-label {
+   .tabButton {
     display:none;
    }
    .logo {
@@ -87,3 +93,4 @@ ion-menu-button {
    }
 
 }
+
