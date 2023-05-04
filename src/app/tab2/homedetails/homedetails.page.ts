@@ -10,12 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 export class HomedetailsPage  implements OnInit {
   propertyId: any;
   propertyDetails: any;
+  houseNumber = 0;
   constructor(private houses: HousesService, private route: ActivatedRoute) {
     
   }
 
   ngOnInit() {
-    
+    const houseNumber = Math.floor(Math.random() * 3);
+    console.log("houseNumber is " + houseNumber);
+
+    console.log(this.route)
     this.propertyId = this.route.snapshot.paramMap.get('id');
     this.houses.searchHouseById(this.propertyId).subscribe(res => {
       
