@@ -41,6 +41,7 @@
     "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-tts-advanced": "^0.5.2",
     "firebase": "^9.21.0",
+    "ionic": "^5.4.16",
     "ionicons": "^7.0.0",
     "mapbox-gl": "^2.14.1",
     "rxjs": "~7.5.0",
