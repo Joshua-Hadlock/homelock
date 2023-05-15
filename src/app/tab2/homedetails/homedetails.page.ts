@@ -17,7 +17,8 @@ export class HomedetailsPage  implements OnInit {
   }
   
   goBack() {
-    this._router.navigate(['tabs/browse'])
+    console.log('i ran')
+    this._router.navigateByUrl('/tabs/tab2')
   }
 
   ngOnInit() {
