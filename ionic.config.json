@@ -1,7 +1,0 @@
-{
-  "name": "ioncomp23",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
