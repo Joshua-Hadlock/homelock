@@ -11,18 +11,19 @@ import { Router } from '@angular/router';
 export class HomedetailsPage  implements OnInit {
   propertyId: any;
   propertyDetails: any;
-  houseNumber = 0;
+  houseNumber = Math.floor(Math.random() * 4);
   constructor(private houses: HousesService, private route: ActivatedRoute, private _router: Router) {
     
   }
   
   goBack() {
-    this._router.navigate(['tabs/browse'])
+    console.log('i ran')
+    this._router.navigateByUrl('/tabs/tab2')
   }
 
   ngOnInit() {
-    const houseNumber = Math.floor(Math.random() * 3);
-    console.log("houseNumber is " + houseNumber);
+    
+    console.log("houseNumber is " + this.houseNumber);
 
     console.log(this.route)
     this.propertyId = this.route.snapshot.paramMap.get('id');

@@ -3,7 +3,6 @@
 <div class="homepageBody">
  <div class="homepageBodyLeft">
     <div class="textContainer">
-        <button (click)="goBack()" href="tabs/browse">Return</button>
         <h1>{{propertyDetails?.property[0].address.line1 || 'error'}}</h1>
         <h3>${{propertyDetails?.property[0].sale.amount.saleamt || 'error'}}</h3>
         <div class="box1">
@@ -25,10 +24,9 @@
     </div>
  </div>
     <div class="homepageBodyRight">
-
-        <!-- <div class="houseImage"></div> -->
-        <div *ngIf="houseNumber === 0">Content to render when condition is true.</div>
-        <!-- <div *ngIf="houseNumber == 1">Content to render when condition is true.</div>
-        <div *ngIf="houseNumber == 2">Content to render when condition is true.</div> -->
-        <!-- <div *ngIf="houseNumber == 1"><img src="../../../assets/house-1.jpeg"></div> -->
+        <div *ngIf="houseNumber === 0" class="houseImage houseImage1"></div>
+        <div *ngIf="houseNumber === 1" class="houseImage houseImage2"></div>
+        <div *ngIf="houseNumber === 2" class="houseImage houseImage3"></div>
+        <div *ngIf="houseNumber === 3" class="houseImage houseImage4"></div>
+        <div *ngIf="houseNumber === 4" class="houseImage houseImage5"></div>
 </div>

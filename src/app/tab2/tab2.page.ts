@@ -74,7 +74,7 @@ export class Tab2Page {
           },
         properties: {
           title: 'random house',
-          description: 'This is your very special data :)',
+          description: '',
           id: house.identifier.Id
         }  
       })
@@ -104,7 +104,7 @@ export class Tab2Page {
       .setPopup(
         new mapboxgl.Popup({ offset: 25 }) // add popups
           .setHTML(
-            `<ion-item href="/tabs/tab2/details/${feature.properties.id}">${feature.properties.title}</h3><p>${feature.properties.description}</p></ion-item>`
+            `<ion-item href="/tabs/browse/details/${feature.properties.id}">${feature.properties.title}</h3><p>${feature.properties.description}</p></ion-item>`
           )
       )
       .addTo(this.map);
