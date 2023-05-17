@@ -69,7 +69,7 @@ ion-menu-button {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 844px) {
    .tabButton {
     display:none;
    }
@@ -90,6 +90,12 @@ ion-menu-button {
     padding-left:250px;
     margin-top:80px;
     display: block;
+   }
+   .signIn {
+    display:none;
+   }
+   .signOut {
+    display:none;
    }
 
 }

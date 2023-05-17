@@ -16,8 +16,8 @@
 
       <!-- <span class="spacer"></span> -->
       <div class="right">
-        <ion-tab-button id="sign-in" *ngIf="(afAuth.user | async) === null" tab="sign-in" class="no-ripple-effect"><ion-label>SIGN IN</ion-label></ion-tab-button>
-        <ion-tab-button id="sign-out" *ngIf="(afAuth.user | async)" class="no-ripple-effect" tab="sign-in"><ion-label>SIGN OUT</ion-label></ion-tab-button>
+        <ion-tab-button id="sign-in" *ngIf="(afAuth.user | async) === null" tab="sign-in" class="no-ripple-effect"><ion-label class="signIn">SIGN IN</ion-label></ion-tab-button>
+        <ion-tab-button id="sign-out" *ngIf="(afAuth.user | async)" class="no-ripple-effect" tab="sign-in"><ion-label class="signOut">SIGN OUT</ion-label></ion-tab-button>
         <div class="ion-page" id="main-content">
                 <ion-menu-button></ion-menu-button>
         </div>
